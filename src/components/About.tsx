@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect, CSSProperties } from "react";
-import Link from "next/link"; // Assuming you're using Next.js
+import Link from "next/link"; 
+
 
 const skillCategories = [
   {

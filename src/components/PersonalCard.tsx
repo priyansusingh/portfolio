@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { FaLinkedin, FaGithub, FaTwitter, FaInstagram, FaEnvelope, FaPhone } from 'react-icons/fa'
-
+import Link from "next/link"; 
 export default function PersonalCard() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-900 p-4">
@@ -37,11 +37,24 @@ export default function PersonalCard() {
           </p>
           </motion.div>
           <div className="flex space-x-4 text-gray-400">
-            <FaLinkedin className="w-6 h-6 hover:text-pink-500 transition-colors duration-200" />
+           <Link href={"https://www.linkedin.com/in/priyansusingh/"}>
+           <FaLinkedin className="w-6 h-6 hover:text-pink-500 transition-colors duration-200"/>
+           </Link>
+           
+           <Link href={"https://github.com/priyansusingh"}>
             <FaGithub className="w-6 h-6 hover:text-pink-500 transition-colors duration-200" />
+            </Link>
+
+            <Link href={"https://x.com/priyansu__singh"}>
             <FaTwitter className="w-6 h-6 hover:text-pink-500 transition-colors duration-200" />
+            </Link>
+
+            <Link href={"https://www.instagram.com/_priyansu__singh/"}>
             <FaInstagram className="w-6 h-6 hover:text-pink-500 transition-colors duration-200" />
-            <FaEnvelope className="w-6 h-6 hover:text-pink-500 transition-colors duration-200" />
+            </Link>  
+
+             <FaEnvelope className="w-6 h-6 hover:text-pink-500 transition-colors duration-200" />
+                 
           </div>
           <div className="flex items-center text-gray-400">
             <FaPhone className="w-5 h-5 mr-2" />
