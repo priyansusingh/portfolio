@@ -22,15 +22,20 @@ export default function PersonalCard() {
            HELLO WORLD 
           </motion.div>
           <h1 className="text-4xl font-extrabold text-white">
-            Hello I'm <span className="text-pink-500">Priyansu</span>.
+            Hello I&apos;m <span className="text-pink-500">Priyansu</span>.
           </h1>
           <p className="text-gray-300 text-lg">
-            I'm into <span className="text-pink-400">&lt;Full-Stack Development /&gt;</span>
+            I&apos;m into <span className="text-pink-400">&lt;Full-Stack Development /&gt;</span>
           </p>
+          <motion.div initial={{ x: -50 }}
+            animate={{ x: 0 }}
+            transition={{ delay: 0.2, type: 'spring', stiffness: 120 }}
+            className="bg-pink-600 text-white text-xl py-2 px-4 rounded-full inline-block">
           <p className="text-gray-400">
             I am Gifted for experience with Better Service & Faster. I was able to help
             the client and successfully created with an identity.
           </p>
+          </motion.div>
           <div className="flex space-x-4 text-gray-400">
             <FaLinkedin className="w-6 h-6 hover:text-pink-500 transition-colors duration-200" />
             <FaGithub className="w-6 h-6 hover:text-pink-500 transition-colors duration-200" />
