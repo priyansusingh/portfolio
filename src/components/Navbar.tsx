@@ -1,13 +1,13 @@
-'use client'
+'use client';
 
-import Link from 'next/link'
-import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import Link from 'next/link';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <nav className="bg-gray-900 text-white p-4 shadow-lg">
@@ -18,6 +18,7 @@ export default function Navbar() {
               Priyansu
             </span>
           </Link>
+          {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
             <NavLink href="#home">Home</NavLink>
             <NavLink href="#about">About</NavLink>
@@ -25,11 +26,13 @@ export default function Navbar() {
             <NavLink href="#projects">Projects</NavLink>
             <NavLink href="#contact">Contact</NavLink>
           </div>
+          {/* Mobile Menu Button */}
           <button className="md:hidden" onClick={toggleMenu}>
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden mt-4 space-y-4">
           <NavLink href="#home" onClick={toggleMenu}>Home</NavLink>
@@ -40,17 +43,17 @@ export default function Navbar() {
         </div>
       )}
     </nav>
-  )
+  );
 }
 
-function NavLink({ href, children, onClick }) {
+function NavLink({ href, children, onClick = () => {} }:any) {
   return (
-    <Link 
-      href={href} 
+    <Link
+      href={href}
       className="block py-2 px-4 hover:bg-gray-800 rounded transition-colors duration-300"
       onClick={onClick}
     >
       {children}
     </Link>
-  )
+  );
 }
