@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { ReactNode, MouseEvent } from 'react';
+
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,7 +48,13 @@ export default function Navbar() {
   );
 }
 
-function NavLink({ href, children, onClick = () => {} }:any) {
+interface NavLinkProps {
+  href: string;
+  children: ReactNode;
+  onClick?: (event: MouseEvent<HTMLAnchorElement>) => void;
+}
+function NavLink({ href, children, onClick = () => {} }:NavLinkProps) {
+
   return (
     <Link
       href={href}
